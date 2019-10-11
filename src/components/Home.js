@@ -5,14 +5,19 @@ import PropTypes from 'prop-types';
 
 
 const Home = props => {
-    const {data, getQuery, query, getHouse} = props;
+    const {data, getQuery, query, getHouse, getStatus, checked} = props;
     return (
         <React.Fragment>
-            <Filters getQuery={getQuery}/>
+            <Filters 
+            getQuery={getQuery}
+            getStatus={getStatus}
+            checked={checked}/>
             <ListCharac 
             data={data} 
             query={query}
-            getHouse={getHouse}/>
+            getHouse={getHouse}
+            checked={checked}
+            />
         </React.Fragment>
     );
 };

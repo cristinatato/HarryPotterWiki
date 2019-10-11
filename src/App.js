@@ -10,10 +10,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      query: ''
+      query: '',
+      checked: true
     }
     this.getQuery= this.getQuery.bind(this);
     this.getHouse= this.getHouse.bind(this);
+    this.getStatus= this.getStatus.bind(this);
   }
   componentDidMount() {
     this.getData();
@@ -37,6 +39,17 @@ class App extends React.Component {
     this.setState({
       query: value
     })
+  }
+
+  getStatus (event) {
+    const currentStatus = event.currentTarget.checked;
+    if (currentStatus === true) {
+      return (
+        this.setState(prevState => ({
+          checked: !prevState.checked
+        }))
+      );
+    }
   }
 
     getHouse (house) {
@@ -64,7 +77,9 @@ class App extends React.Component {
               getQuery={this.getQuery}
               data={this.state.data} 
               query={this.state.query}
-              getHouse={this.getHouse}/>
+              getHouse={this.getHouse}
+              getStatus={this.getStatus}
+              checked={this.state.checked} />
             );
           }}/>
 

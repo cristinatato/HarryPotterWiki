@@ -10,6 +10,11 @@ const ListCharac = props => {
         <ul className="list">
           {data
           .filter(mycharac => mycharac.name.toUpperCase().includes(query.toUpperCase()))
+          .filter(mycharac => { 
+            return ( 
+              mycharac.alive === true ? mycharac.alive : false
+            );
+          })
           .map(charac => {
             return (
               <li className="character" key={charac.newid}>
