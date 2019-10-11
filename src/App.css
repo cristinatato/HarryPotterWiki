@@ -1,5 +1,17 @@
-.App {
+.app {
   text-align: center;
+  background-image:url('https://wallpaperaccess.com/full/314147.jpg');
+  background-size: contain;
+}
+.app__title {
+  height: 1px;
+  padding-top: 249px;
+  overflow: hidden;
+  background-image:url('https://pngriver.com/wp-content/uploads/2018/03/Download-Harry-Potter-Logo-PNG-Photos-265.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0px;
 }
 .list {
   list-style: none;
